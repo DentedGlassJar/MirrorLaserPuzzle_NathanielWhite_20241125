@@ -7,6 +7,8 @@ public class VectorScript : MonoBehaviour
     public GameObject laserPointerObj;
     public GameObject goalObj;
 
+    public LineRenderer drawLine;
+
     Vector2 mousePosition;
     
 
@@ -24,8 +26,7 @@ public class VectorScript : MonoBehaviour
         Vector2 laserStart = laserPointerObj.transform.position;
         Vector2 laserEnd = mousePosition;
 
-        Debug.DrawLine(laserStart, laserEnd.normalized, Color.red);
+        drawLine.SetPositions(laserStart, laserEnd);
 
-        Debug.Log($"laserEnd is {laserEnd}!");
     }
 }
