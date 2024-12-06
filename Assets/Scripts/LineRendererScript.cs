@@ -52,4 +52,8 @@ public class LineRendererScript : MonoBehaviour
 
         return lr;
     }
+
+    private LineRenderer LineReflection()
+    {
+    }
 }
