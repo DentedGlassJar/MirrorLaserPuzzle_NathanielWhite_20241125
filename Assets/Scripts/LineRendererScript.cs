@@ -6,23 +6,21 @@ using UnityEngine.Windows.Speech;
 public class LineRendererScript : MonoBehaviour
 {
     List<Vector3> laserPositions = new List<Vector3>();
-    public GameObject laserStartObj;
-    private Vector3 mouseHover;
+    public GameObject laserStartObj; // The gameobject for the beginning on the laser
+    private Vector3 mouseHover; // the vector3 variable for the movement of the mouse
 
-    private LineRenderer lr;
+    private LineRenderer lr; // The variable to get the component of the linerenderer
 
-    private float mouseMax = 5f;
-    private float mouseMin = -5f;
+    private float mouseMax = 5f; // The maximum float value to stop the line from going off-screen
+    private float mouseMin = -5f; // the minimum float value to stop the line from going off-screen
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
         Cursor.visible = false;
         
         laserPositions.Add(laserStartObj.transform.position);
-
-        Debug.Log($"Laser Start is {laserStartObj}, Mouse Hover is {mouseHover}");
         
         lr = GetComponent<LineRenderer>();
     }
@@ -36,7 +34,6 @@ public class LineRendererScript : MonoBehaviour
 
     private LineRenderer SetLine()
     {
-        Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         mouseHover = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mouseHover.x = 11f;
 

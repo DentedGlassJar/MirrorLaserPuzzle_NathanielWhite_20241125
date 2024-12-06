@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 433327216}
   - component: {fileID: 433327215}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,9 +747,10 @@ GameObject:
   - component: {fileID: 1388419723}
   - component: {fileID: 1388419722}
   - component: {fileID: 1388419721}
+  - component: {fileID: 1388419725}
   m_Layer: 0
   m_Name: Line Renderer
-  m_TagString: Untagged
+  m_TagString: LineTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -820,7 +821,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1015625
+        value: 0.0703125
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -886,6 +887,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388419725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388419720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130888798de300c47804bf00071eb0f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goalObj: {fileID: 415296245}
 --- !u!1 &1598625172
 GameObject:
   m_ObjectHideFlags: 0
