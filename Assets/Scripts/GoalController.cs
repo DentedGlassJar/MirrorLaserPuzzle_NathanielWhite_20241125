@@ -5,12 +5,12 @@ using UnityEngine;
 public class GoalController : MonoBehaviour
 {
     public GameObject goalObj;
-    int goalHealth;
+    int goalHealth = 1000;
     
     // Start is called before the first frame update
     void Start()
     {
-        goalHealth = 1000;
+
     }
 
     // Update is called once per frame
@@ -28,6 +28,7 @@ public class GoalController : MonoBehaviour
         if (other.gameObject.CompareTag("GoalTag"))
         {
             goalHealth =- 1;
+
         }
     }
 }
