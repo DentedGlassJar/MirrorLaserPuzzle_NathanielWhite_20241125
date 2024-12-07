@@ -35,7 +35,7 @@ public class LineRendererScript : MonoBehaviour
         SetLine();
         laserPositions.Remove(mouseHover); // This removes the point the mouse is at, so it
 
-        LineReflection(laserStartObj.transform.position, mouseDirection);
+        //LineReflection(laserStartObj.transform.position, mouseDirection);
 
 
     }
@@ -63,44 +63,47 @@ public class LineRendererScript : MonoBehaviour
         return lr;
     }
 
-    private Vector3 LineReflection(Vector3 laserStartObj, Vector3 mouseDirection)
+    /*private Vector3 LineReflection(Vector3 currentPoint, Vector3 direction)
     {
-        Ray ray = new Ray(laserStartObj,mouseDirection);
+        currentPoint = laserStartObj.transform.position;
+        direction = mouseDirection;
+        
+        Ray ray = new Ray(currentPoint,direction);
         RaycastHit hit;
 
         Vector3 reflectDir;
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag("WinTrigger"))
-            {
-                Debug.Log($"");
-                winText.SetActive(true);
-                Time.timeScale = 0f;
-            }
-
             if (hit.collider.CompareTag("Mirror"))
             {
-                mouseHover = hit.normal;
+                currentPoint = hit.normal;
                 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
 
-                LineReflection(hit.point, reflectDir);
+                LineReflection(currentPoint, reflectDir);
 
-                return reflectDir;
+                return LineReflection(currentPoint, reflectDir);
             }
-            else
+            else if(hit.collider.CompareTag("WinTrigger"))
             {
-                reflectDir = Vector3.zero;
 
-                return reflectDir;
             }
+            
+            if(hit.collider.CompareTag("WinTrigger"))
+            {
+                winText.SetActive(true);
+                Time.timeScale = 0f;
+
+                return currentPoint;
+            }
+
         }
         else
         {
             reflectDir = Vector3.zero;
 
-            return reflectDir;
+            return currentPoint;
         }
-    }
+    }*/
     
 }
