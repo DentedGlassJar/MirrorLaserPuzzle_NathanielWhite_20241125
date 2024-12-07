@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - GoalTag
-  - LineTrigger
+  - Mirror
+  - WinTrigger
   layers:
   - Default
   - TransparentFX
